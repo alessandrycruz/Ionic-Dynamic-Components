@@ -6,11 +6,20 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { AdService } from './ad-service';
+import { AdBannerComponent } from './ad-banner.component';
+import { HeroJobAdComponent } from './hero-job-ad.component';
+import { HeroProfileComponent } from './hero-profile.component';
+import { AdDirective } from './ad-directive';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    AdBannerComponent,
+    HeroJobAdComponent,
+    HeroProfileComponent,
+    AdDirective
   ],
   imports: [
     BrowserModule,
@@ -19,12 +28,15 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    HeroJobAdComponent, HeroProfileComponent
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    AdService,
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule {
+}
